@@ -1,0 +1,501 @@
+@import "bourbon"
+@import "vars.sass"
+
+
+
+.hidden
+	display: none
+
+html
+  box-sizing: border-box
+  min-height: 100%
+  *
+    box-sizing: inherit
+    &:before, &:after
+      box-sizing: inherit
+
+body
+  max-width: 42em
+  padding: 2em
+  margin: 0 auto
+  color: #161616
+  font-family: 'Russo One', sans-serif
+  text-align: center
+  background-color: currentColor
+  background: url(https://www.elementaryos-fr.org/wp-content/uploads/2013/09/wallpaper-1923233.jpg) 50% 50% / cover no-repeat
+  min-height: 100%
+
+.filter
+  position: absolute
+  width: 100%
+  height: 100%
+  background-color: rgba(#333,.3)
+  z-index: 0
+  top: 0
+  left: 0  
+
+.wrapper
+  margin-top: 40%
+
+.temp
+  position: relative
+  z-index: 1
+
+h1
+  margin-bottom: 1.375em
+  color: #fff
+  font-weight: 100
+  font-size: 2em
+  text-transform: uppercase
+  position: relative
+  z-index: 1
+
+h2
+  margin-bottom: 1.375em
+  color: #fff
+  font-weight: 100
+  font-size: 1em
+  text-transform: uppercase
+  position: relative
+  z-index: 1
+
+p, a
+  color: rgba(255, 255, 255, 0.3)
+  font-size: small
+
+p
+  margin: 1.375rem 0
+
+.icon
+  position: relative
+  display: inline-block
+  width: 12em
+  height: 10em
+  font-size: 1em
+  /* control icon size here
+
+
+.sun-shower,.thunder-storm,.cloudy,.flurries,.sunny,.rainy
+	display: none
+
+.temp
+	color: white
+	font-size: 30px
+
+
+.background
+  display: none
+  width: 100%
+  height: 100%
+  position: absolute
+  left: 0
+  top: 0
+  z-index: 0
+  overflow: hidden
+  background: #2BC0E4 /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #2BC0E4 , #EAECC6) /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #2BC0E4 , #EAECC6) /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* Chrome10+,Safari5.1+
+  background-size: 100% 100%
+
+#c
+  position: absolute
+  top: 0
+  left: 0
+  width: 100vw
+  height: 100vh
+
+
+.clouds
+  width: 200x
+  height: 300px
+  position: absolute
+
+.cloud1
+  top: 50px
+  z-index: 100
+  fill: #eee
+  /* Animation shorthand syntax order: name, duration, timing-function, delay, iteration-count, direction, fill-mode
+  -webkit-animation: move 20s linear infinite
+  -moz-animation: move 20s linear infinite
+  -o-animation: move 20s linear infinite
+  animation: move 20s linear infinite
+
+.cloud2
+  top: 300px
+  z-index: 200
+  fill: #eee
+  -webkit-animation: move 35s linear 10s infinite backwards
+  -moz-animation: move 35s linear 10s infinite backwards
+  -o-animation: move 35s linear 10s infinite backwards
+  animation: move 35s linear 10s infinite backwards
+
+@-webkit-keyframes move
+  from
+    -webkit-transform: translateX(-2000px)
+
+  to
+    -webkit-transform: translateX(1350px)
+
+.cloud
+  position: absolute
+  z-index: 1
+  top: 50%
+  left: 50%
+  width: 3.6875em
+  height: 3.6875em
+  margin: -1.84375em
+  background: currentColor
+  border-radius: 50%
+  box-shadow: -2.1875em 0.6875em 0 -0.6875em, 2.0625em 0.9375em 0 -0.9375em, 0 0 0 0.375em #fff, -2.1875em 0.6875em 0 -0.3125em #fff, 2.0625em 0.9375em 0 -0.5625em #fff
+  &:after
+    content: ''
+    position: absolute
+    bottom: 0
+    left: -0.5em
+    display: block
+    width: 4.5625em
+    height: 1em
+    background: currentColor
+    box-shadow: 0 0.4375em 0 -0.0625em #fff
+  &:nth-child(2)
+    z-index: 0
+    background: #fff
+    box-shadow: -2.1875em 0.6875em 0 -0.6875em #fff, 2.0625em 0.9375em 0 -0.9375em #fff, 0 0 0 0.375em #fff, -2.1875em 0.6875em 0 -0.3125em #fff, 2.0625em 0.9375em 0 -0.5625em #fff
+    opacity: 0.3
+    transform: scale(0.5) translate(6em, -3em)
+    animation: cloud 4s linear infinite
+    &:after
+      background: #fff
+
+.sun
+  position: absolute
+  top: 50%
+  left: 50%
+  width: 2.5em
+  height: 2.5em
+  margin: -1.25em
+  background: transparent
+  border-radius: 50%
+  box-shadow: 0 0 0 0.375em #fff
+  animation: spin 12s infinite linear
+
+.rays
+  position: absolute
+  top: -2em
+  left: 50%
+  display: block
+  width: 0.375em
+  height: 1.125em
+  margin-left: -0.1875em
+  background: #fff
+  border-radius: 0.25em
+  box-shadow: 0 5.375em #fff
+  &:before, &:after
+    content: ''
+    position: absolute
+    top: 0em
+    left: 0em
+    display: block
+    width: 0.375em
+    height: 1.125em
+    transform: rotate(60deg)
+    transform-origin: 50% 3.25em
+    background: #fff
+    border-radius: 0.25em
+    box-shadow: 0 5.375em #fff
+  &:before
+    transform: rotate(120deg)
+
+.cloud + .sun
+  margin: -2em 1em
+
+.rain, .lightning, .snow
+  position: absolute
+  z-index: 2
+  top: 50%
+  left: 50%
+  width: 3.75em
+  height: 3.75em
+  margin: 0.375em 0 0 -2em
+  
+
+.rain:after
+  content: ''
+  position: absolute
+  z-index: 2
+  top: 50%
+  left: 50%
+  width: 1.125em
+  height: 1.125em
+  margin: -1em 0 0 -0.25em
+  background: #0cf
+  border-radius: 100% 0 60% 50% / 60% 0 100% 50%
+  box-shadow: 0.625em 0.875em 0 -0.125em rgba(255, 255, 255, 0.2), -0.875em 1.125em 0 -0.125em rgba(255, 255, 255, 0.2), -1.375em -0.125em 0 rgba(255, 255, 255, 0.2)
+  transform: rotate(-28deg)
+  animation: rain 3s linear infinite
+
+.bolt
+  position: absolute
+  top: 50%
+  left: 50%
+  margin: -0.25em 0 0 -0.125em
+  color: #fff
+  opacity: 0.3
+  animation: lightning 2s linear infinite
+  &:nth-child(2)
+    width: 0.5em
+    height: 0.25em
+    margin: -1.75em 0 0 -1.875em
+    transform: translate(2.5em, 2.25em)
+    opacity: 0.2
+    animation: lightning 1.5s linear infinite
+  &:before
+    content: ''
+    position: absolute
+    z-index: 2
+    top: 50%
+    left: 50%
+    margin: -1.625em 0 0 -1.0125em
+    border-top: 1.25em solid transparent
+    border-right: 0.75em solid
+    border-bottom: 0.75em solid
+    border-left: 0.5em solid transparent
+    transform: skewX(-10deg)
+  &:after
+    content: ''
+    position: absolute
+    z-index: 2
+    top: 50%
+    left: 50%
+    margin: -1.625em 0 0 -1.0125em
+    border-top: 1.25em solid transparent
+    border-right: 0.75em solid
+    border-bottom: 0.75em solid
+    border-left: 0.5em solid transparent
+    transform: skewX(-10deg)
+    margin: -0.25em 0 0 -0.25em
+    border-top: 0.75em solid
+    border-right: 0.5em solid transparent
+    border-bottom: 1.25em solid transparent
+    border-left: 0.75em solid
+    transform: skewX(-10deg)
+  &:nth-child(2)
+    &:before
+      margin: -0.75em 0 0 -0.5em
+      border-top: 0.625em solid transparent
+      border-right: 0.375em solid
+      border-bottom: 0.375em solid
+      border-left: 0.25em solid transparent
+    &:after
+      margin: -0.125em 0 0 -0.125em
+      border-top: 0.375em solid
+      border-right: 0.25em solid transparent
+      border-bottom: 0.625em solid transparent
+      border-left: 0.375em solid
+
+.flake
+  &:before
+    content: '\2744'
+    position: absolute
+    top: 50%
+    left: 50%
+    margin: -1.025em 0 0 -1.0125em
+    color: #fff
+    list-height: 1em
+    opacity: 0.2
+    animation: spin 8s linear infinite reverse
+  &:after
+    content: '\2744'
+    position: absolute
+    top: 50%
+    left: 50%
+    margin: -1.025em 0 0 -1.0125em
+    color: #fff
+    list-height: 1em
+    opacity: 0.2
+    animation: spin 8s linear infinite reverse
+    margin: 0.125em 0 0 -1em
+    font-size: 1.5em
+    opacity: 0.4
+    animation: spin 14s linear infinite
+  &:nth-child(2)
+    &:before
+      margin: -0.5em 0 0 0.25em
+      font-size: 1.25em
+      opacity: 0.2
+      animation: spin 10s linear infinite
+    &:after
+      margin: 0.375em 0 0 0.125em
+      font-size: 2em
+      opacity: 0.4
+      animation: spin 16s linear infinite reverse
+
+
+
+.sun2
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  margin-left: 200px
+  margin-top: 150px
+  width: 70px
+  height: 70px
+  border-radius: 50%
+  background: white
+  opacity: 0.9
+  box-shadow: 0px 0px 40px 15px white
+  display: none
+
+.ray_box
+  position: absolute
+  margin: auto
+  top: 0px
+  left: 0
+  right: 0
+  bottom: 0
+  width: 70px
+  -webkit-animation: ray_anim 120s linear infinite
+  animation: ray_anim 120s linear infinite
+
+.ray
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%)
+  background: linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%)
+  margin-left: 10px
+  border-radius: 80% 80% 0 0
+  position: absolute
+  opacity: 0.1
+
+.ray1
+  height: 170px
+  width: 30px
+  -webkit-transform: rotate(180deg)
+  top: -175px
+  left: 15px
+
+.ray2
+  height: 100px
+  width: 8px
+  -webkit-transform: rotate(220deg)
+  top: -90px
+  left: 75px
+
+.ray3
+  height: 170px
+  width: 50px
+  -webkit-transform: rotate(250deg)
+  top: -80px
+  left: 100px
+
+.ray4
+  height: 120px
+  width: 14px
+  -webkit-transform: rotate(305deg)
+  top: 30px
+  left: 100px
+
+.ray5
+  height: 140px
+  width: 30px
+  -webkit-transform: rotate(-15deg)
+  top: 60px
+  left: 40px
+
+.ray6
+  height: 90px
+  width: 50px
+  -webkit-transform: rotate(30deg)
+  top: 60px
+  left: -40px
+
+.ray7
+  height: 180px
+  width: 10px
+  -webkit-transform: rotate(70deg)
+  top: -35px
+  left: -40px
+
+.ray8
+  height: 120px
+  width: 30px
+  -webkit-transform: rotate(100deg)
+  top: -45px
+  left: -90px
+
+.ray9
+  height: 80px
+  width: 10px
+  -webkit-transform: rotate(120deg)
+  top: -65px
+  left: -60px
+
+.ray10
+  height: 190px
+  width: 23px
+  -webkit-transform: rotate(150deg)
+  top: -185px
+  left: -60px
+
+@-webkit-keyframes ray_anim
+  0%
+    -webkit-transform: rotate(0deg)
+    transform: rotate(0deg)
+
+  100%
+    -webkit-transform: rotate(360deg)
+    transform: rotate(360deg)
+
+/* Animations
+
+
+
+@keyframes spin
+  100%
+    transform: rotate(360deg)
+
+
+@keyframes cloud
+  0%
+    opacity: 0
+
+  50%
+    opacity: 0.3
+
+  100%
+    opacity: 0
+    transform: scale(0.5) translate(-200%, -3em)
+
+
+@keyframes rain
+  0%
+    background: #0cf
+    box-shadow: 0.625em 0.875em 0 -0.125em rgba(255, 255, 255, 0.2), -0.875em 1.125em 0 -0.125em rgba(255, 255, 255, 0.2), -1.375em -0.125em 0 #0cf
+
+  25%
+    box-shadow: 0.625em 0.875em 0 -0.125em rgba(255, 255, 255, 0.2), -0.875em 1.125em 0 -0.125em #0cf, -1.375em -0.125em 0 rgba(255, 255, 255, 0.2)
+
+  50%
+    background: rgba(255, 255, 255, 0.3)
+    box-shadow: 0.625em 0.875em 0 -0.125em #0cf, -0.875em 1.125em 0 -0.125em rgba(255, 255, 255, 0.2), -1.375em -0.125em 0 rgba(255, 255, 255, 0.2)
+
+  100%
+    box-shadow: 0.625em 0.875em 0 -0.125em rgba(255, 255, 255, 0.2), -0.875em 1.125em 0 -0.125em rgba(255, 255, 255, 0.2), -1.375em -0.125em 0 #0cf
+
+
+@keyframes lightning
+  45%
+    color: #fff
+    background: #fff
+    opacity: 0.2
+
+  50%
+    color: #0cf
+    background: #0cf
+    opacity: 1
+
+  55%
+    color: #fff
+    background: #fff
+    opacity: 0.2
